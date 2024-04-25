@@ -1,73 +1,26 @@
 package com.ritubrata.java.eleven;
 
-import java.util.stream.Collectors;
-
 public class Java11StringRelatedChanges {
 
-    /**
-     * Write provided {@code String} in header. Note that this
-     * implementation uses {@code String.repeat(int)}.
-     *
-     * @param headerText Title of header.
-     */
-    private static void writeHeader(final String headerText) {
-        final String headerSeparator = "=".repeat(headerText.length() + 4);
-
-        System.out.println("\n" + headerSeparator);
-        System.out.println(headerText);
-        System.out.println(headerSeparator);
+    public static void main(String[] args) {
+        /*exampleOfStringLinesAndStrip();
+        exampleOfStringIsBlank();*/
+        exampleOfRepeatAndReplaceRelatedMethods();
     }
-
-
-    /**
-     * Demonstrate method {@code String.lines()} added with JDK 11.
-     */
-    public static void demonstrateStringLines() {
+    public static void exampleOfStringLinesAndStrip() {
+        System.out.println("**************** String.lines() & String.strip()**********");
         String originalString = "Hello\nWorld\n123";
-
-        String stringWithoutLineSeparators = originalString.replaceAll("\\n", "\\\\n");
-
-        writeHeader("String.lines() on '" + stringWithoutLineSeparators + "'");
-
+        //originalString.replaceAll("\\n", "\\\\n").lines().forEach(System.out::println);
         originalString.lines().forEach(System.out::println);
+
+        String originalString2 = "  ritu.me  23333  ";
+        System.out.println("'" + originalString2.strip() + "'");
+        System.out.println("'" + originalString2.stripLeading() + "'");
+        System.out.println("'" + originalString2.stripTrailing() + "'");
+        System.out.println("**************************");
     }
-
-    /**
-     * Demonstrate method {@code String.strip()} added with JDK 11.
-     */
-    public static void demonstrateStringStrip() {
-        String originalString = "  ritu.me  23333  ";
-
-        writeHeader("String.strip() on '" + originalString + "'");
-        System.out.println("'" + originalString.strip() + "'");
-    }
-
-    /**
-     * Demonstrate method {@code String.stripLeading()} added with JDK 11.
-     */
-    public static void demonstrateStringStripLeading() {
-        String originalString = "  ritu.me  23333  ";
-
-        writeHeader("String.stripLeading() on '" + originalString + "'");
-        System.out.println("'" + originalString.stripLeading() + "'");
-    }
-
-    /**
-     * Demonstrate method {@code String.stripTrailing()} added with JDK 11.
-     */
-    public static void demonstrateStringStripTrailing() {
-        String originalString = "  ritu.me  23333  ";
-
-        writeHeader("String.stripTrailing() on '" + originalString + "'");
-        System.out.println("'" + originalString.stripTrailing() + "'");
-    }
-
-    /**
-     * Demonstrate method {@code String.isBlank()} added with JDK 11.
-     */
-    public static void demonstrateStringIsBlank() {
-        writeHeader("String.isBlank()");
-
+    public static void exampleOfStringIsBlank() {
+        System.out.println("**************** String.isBlank() **********");
         String emptyString = "";
         System.out.println("Empty String is blank    -> " + emptyString.isBlank());
 
@@ -79,25 +32,25 @@ public class Java11StringRelatedChanges {
 
         String spacesOnly = "   ";
         System.out.println("Spaces is blank  -> " + spacesOnly.isBlank());
+        System.out.println("******************************");
     }
 
+    public static void exampleOfRepeatAndReplaceRelatedMethods(){
+        System.out.println("**************** String.replace() **********");
+        String str = "Guru99 is a site providing free tutorials";
+        String str1 = str.replaceFirst("s", "9");
+        System.out.println(str1);
 
-    public static void lines() {
-        writeHeader("String.lines()");
+        String str2 = str.replace("Guru", "Ritu");
+        System.out.println(str2);
 
-        String str = "Hello \n World, I,m\nritu.";
+        String str3 = str.replaceAll("\\s", "");
+        System.out.println(str3);
 
-        System.out.println(str.lines().collect(Collectors.toList()));
-    }
-
-    public static void main(String[] args) {
-       writeHeader("User-Agent\tMozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5)");
-        demonstrateStringLines();
-        demonstrateStringStrip();
-        demonstrateStringStripLeading();
-        demonstrateStringStripTrailing();
-        demonstrateStringIsBlank();
-        lines();
+        String s = "abc";
+        String repeated = s.repeat(3);
+        System.out.println(repeated);
+        System.out.println("******************************");
     }
 
 }
