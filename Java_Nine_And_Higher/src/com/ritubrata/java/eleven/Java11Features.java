@@ -8,16 +8,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class JavaElevenFeatures {
+public class Java11Features {
 
     public static void main(final String[] args) {
         //fileReadWrite();
         System.out.println("********* Predicate Not Method ***************");
         predicateNotMethod();
+        System.out.println("************************");
         System.out.println("********** String Related Changes ********************");
         stringRelatedChanges();
+        System.out.println("************************");
 		System.out.println("********* toArray method *****************");
 		toArrayMethod();
+        System.out.println("************************");
 
 	}
 
@@ -28,6 +31,7 @@ public class JavaElevenFeatures {
 
         final Path new_path = Paths.get("./resources/sample_two.txt");
         Files.writeString(new_path, fileContent.concat("jkl"));
+        Files.delete(path);
     }
 
     private static void predicateNotMethod() {
