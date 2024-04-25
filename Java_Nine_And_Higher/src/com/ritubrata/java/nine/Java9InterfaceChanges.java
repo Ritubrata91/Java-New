@@ -1,9 +1,9 @@
-package com.ritubrata.java11.interfaces;
+package com.ritubrata.java.nine;
 public interface Java9InterfaceChanges {
 
     private static void sayHello() {
         System.out.println("Say Hello！");
-    }
+    } //new addition in Java 9 private static method
 
     void normalInterfaceMethod();
 
@@ -17,6 +17,6 @@ public interface Java9InterfaceChanges {
 
     private void init() {
         System.out.println("Init Method");
-    }
+    } //new addition in Java 9 private method
 
 }
