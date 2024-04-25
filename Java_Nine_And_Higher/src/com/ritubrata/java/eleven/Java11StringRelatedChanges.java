@@ -3,8 +3,8 @@ package com.ritubrata.java.eleven;
 public class Java11StringRelatedChanges {
 
     public static void main(String[] args) {
-        /*exampleOfStringLinesAndStrip();
-        exampleOfStringIsBlank();*/
+        exampleOfStringLinesAndStrip();
+        exampleOfStringIsBlank();
         exampleOfRepeatAndReplaceRelatedMethods();
     }
     public static void exampleOfStringLinesAndStrip() {
