@@ -11,14 +11,15 @@ public class ParallelStreamExample {
         long end=0;
 
         start=System.currentTimeMillis();
-        IntStream.range(1,100).forEach(System.out::println);
+        List<Integer> list = List.of(1,2,3,4,5,6,7,8,9,10);
+        list.stream().forEach(System.out::println);
         end=System.currentTimeMillis();
         System.out.println("Plain stream took time : "+(end-start));
 
         System.out.println("============================================");
 
         start=System.currentTimeMillis();
-        IntStream.range(1,100).parallel().forEach(System.out::println);
+        list.parallelStream().forEach(System.out::println);
         end=System.currentTimeMillis();
         System.out.println("Parallel stream took time : "+(end-start));
 
