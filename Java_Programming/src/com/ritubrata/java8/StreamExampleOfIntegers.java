@@ -12,7 +12,7 @@ public class StreamExampleOfIntegers {
 	}
 	public static void main(final String[] args) {
 
-		//use of average
+		/*//use of average
 		Arrays.stream(new int[]{1, 2, 3, 4}).map(n -> n * n)
 		.average().ifPresent(System.out::println);
 
@@ -66,7 +66,20 @@ public class StreamExampleOfIntegers {
         Map<Integer ,Long > map = list.stream()
                 .filter(i -> Collections.frequency(list, i) >1)
                 .collect(Collectors.groupingBy(c ->c , Collectors.counting()));
-        map.forEach(   (k , v ) -> System.out.println( k + " : "+ v ));
+        map.forEach(   (k , v ) -> System.out.println( k + " : "+ v ));*/
+
+		//find indices of two elements whose sum is a given number
+		int[] array = {2,8,3,7,6,3};
+		int k = 9;
+		System.out.println("Indices are: ");
+		IntStream.range(0, array.length)
+				.boxed()
+				.flatMap(i -> IntStream.range(i, array.length)
+						.boxed()
+						.filter(j -> k - array[i] == array[j])
+						.flatMap(j -> Stream.of(new int[] { i, j })))
+				.forEach(arr -> System.out.println(Arrays.toString(arr)));
+
 	}
 
 }
