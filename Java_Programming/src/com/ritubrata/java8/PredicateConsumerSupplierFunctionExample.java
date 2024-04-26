@@ -1,10 +1,11 @@
 package com.ritubrata.java8;
 import java.util.Arrays;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class PredicateConsumerSupplierExample {
+public class PredicateConsumerSupplierFunctionExample {
 
 
 	public static void main(final String[] args) {
@@ -29,7 +30,11 @@ public class PredicateConsumerSupplierExample {
 
 		//Supplier example
 		final Supplier<String> s  = ()-> "Java is fun";
-		System.out.println(s.get());
+		System.out.println("Supplier: " + s.get());
+
+		//Function example
+		Function<Integer, Double> half = a -> a / 2.0;
+		System.out.println("Function : " + half.apply(10));
 
 
 	}
