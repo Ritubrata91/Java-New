@@ -8,6 +8,8 @@ import java.util.stream.Stream;
 
 public class Java9StreamRelatedChanges {
 
+	public static final String LINE_SEPARATOR = "*******************";
+
 	public static void ofMethodExampled() {
 		System.out.println("******** List.of() method ***********");
 		final List<String> list = List.of("red", "green", "blue");
@@ -15,7 +17,7 @@ public class Java9StreamRelatedChanges {
 		//list.add("violet"); // throws UnsupportedOperationException
 
 		//final List<String> list_two = List.of("red", "green", null); // throws NullPointerException
-		System.out.println("*******************");
+		System.out.println(LINE_SEPARATOR);
 	}
 
 	public static void iterateExample(){
@@ -23,7 +25,7 @@ public class Java9StreamRelatedChanges {
 		Predicate<Integer> hasNext = n -> n < 100;
 		Stream.iterate(1, hasNext, n -> n * 2)
 				.forEach(System.out::println);
-		System.out.println("*******************");
+		System.out.println(LINE_SEPARATOR);
 	}
 
 	public static void takeWhileExample(){
@@ -31,11 +33,11 @@ public class Java9StreamRelatedChanges {
 		List<Integer> numbers = Arrays.asList(1, 3, 5, 4, 2, 6, 7, 8);
 
 		List<Integer> result = numbers.stream()
-				.takeWhile(n -> n % 2 == 1) // Take elements until the condition (n % 2 == 1) is false.
+				.takeWhile(n -> n % 2 == 1) // Take elements until the condition (n % 2 == 1) is true.
 				.collect(Collectors.toList());
 
 		System.out.println(result);   // Output: [1, 3, 5]
-		System.out.println("*******************");
+		System.out.println(LINE_SEPARATOR);
 	}
 
 	public static void dropWhileExample(){
@@ -47,15 +49,15 @@ public class Java9StreamRelatedChanges {
 				.collect(Collectors.toList());
 
 		System.out.println(result); // Output: [2, 4, 6, 7, 8]
-		System.out.println("*******************");
+		System.out.println(LINE_SEPARATOR);
 	}
 
 	public static void streamOfNullableexample(){
 		System.out.println("******** Stream.ofNullable() method ***********");
 		List<String> list = Arrays.asList("a","b",null,"c","d",null,"e");
-		List<String> stringList = list.stream().flatMap(Stream::ofNullable).collect(Collectors.toList());
+		List<String> stringList = list.stream().flatMap(Stream::ofNullable).toList();
 		System.out.println(stringList);
-		System.out.println("*******************");
+		System.out.println(LINE_SEPARATOR);
 	}
 
 
