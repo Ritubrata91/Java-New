@@ -1,4 +1,4 @@
-package com.ritubrata.java11.var;
+package com.ritubrata.java.ten;
 
 import java.io.File;
 import java.io.FileInputStream;
