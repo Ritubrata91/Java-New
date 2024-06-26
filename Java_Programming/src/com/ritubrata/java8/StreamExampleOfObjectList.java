@@ -1,9 +1,6 @@
 package com.ritubrata.java8;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
@@ -44,6 +41,11 @@ public class StreamExampleOfObjectList {
 		final Map<String, List<Book>> map = bookList.stream()
 				.collect(Collectors.groupingBy(Book::getCategory));
 		map.forEach((category,bookListTemp)->System.out.println("Name: "+category+" ==>"+bookListTemp));
+
+		//find average
+		System.out.println("Avg page no in all books : " + bookList.stream()
+				.mapToInt(b -> b.getPages())
+				.summaryStatistics().getAverage());
 
 
 		//group books by category and find max pages for each category.
