@@ -9,9 +9,9 @@ public class Java11TimeRelatedChanges {
         long day = TimeUnit.DAYS.convert(Duration.ofHours(24));
         System.out.println(day == 1);
 
-        System.out.println(TimeUnit.DAYS.convert(Duration.ofHours(26)));
+        System.out.println(TimeUnit.DAYS.convert(Duration.ofHours(46)));
 
-        System.out.println(TimeUnit.MINUTES.convert(Duration.ofSeconds(60)));
+        System.out.println(TimeUnit.MINUTES.convert(Duration.ofSeconds(119)));
     }
 
 }
