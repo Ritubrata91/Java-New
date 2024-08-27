@@ -22,9 +22,9 @@ public class StreamExampleOfIntegers {
 		System.out.println("Factorial of " + number + " is : " +  IntStream.rangeClosed(2, number).reduce((x, y) -> x * y).getAsInt());
 
 		System.out.println("2nd highest number in 1,3,5,4,2,5 is : " +
-				Stream.of(1,3,5, 4,2,5).distinct()
-						.collect(Collectors.toList()).stream()
+				Stream.of(1,3,5, 4,2,5)
 						.sorted(Comparator.reverseOrder())
+						.distinct()
 						.limit(2).skip(1)
 						.findFirst().get());
 
@@ -49,6 +49,8 @@ public class StreamExampleOfIntegers {
 				.forEach(arr -> System.out.println(Arrays.toString(arr)));
 	}
 	public static void main(final String[] args) {
+
+		askedInInterview();
 		//use of average
 		Arrays.stream(new int[]{1, 2, 3, 4}).map(n -> n * n)
 		.average().ifPresent(System.out::println);
