@@ -10,8 +10,8 @@ public class StreamExampleOfIntegers {
 	public static boolean isPrime(final int number) {
 		return IntStream.rangeClosed(2, number/2).noneMatch(i -> number%i == 0);
 	}
-	public static void main(final String[] args) {
 
+	public static void askedInInterview(){
 		final List<Integer> intList = Arrays.asList( 1,2,3,4,5 );
 		System.out.println("Summation of square of odd numbers in list : " +
 				intList.stream()
@@ -47,10 +47,8 @@ public class StreamExampleOfIntegers {
 						.filter(j -> k - array[i] == array[j])
 						.flatMap(j -> Stream.of(new int[] { i, j })))
 				.forEach(arr -> System.out.println(Arrays.toString(arr)));
-
-
-
-
+	}
+	public static void main(final String[] args) {
 		//use of average
 		Arrays.stream(new int[]{1, 2, 3, 4}).map(n -> n * n)
 		.average().ifPresent(System.out::println);
@@ -73,7 +71,7 @@ public class StreamExampleOfIntegers {
 		System.out.println("23 is prime : " + isPrime(23));
 
 
-
+		final List<Integer> intList = Arrays.asList( 1,2,3,4,5 );
 		final List<String> newStringList = intList.stream()
 				.map(String::valueOf)
 				.collect(Collectors.toList());
@@ -82,7 +80,7 @@ public class StreamExampleOfIntegers {
 		System.out.println(Arrays.asList(5,7,11,15).stream().filter(n->n*n >100).collect(Collectors.toList()));
 
 
-
+		final int number = 5;
 		System.out.println("Fibonacci series for first " + number + " elements is : ");
 		Stream.iterate(new long[] { 0, 1 }, p -> new long[] { p[1], p[0] + p[1] })
 		.limit(number)
