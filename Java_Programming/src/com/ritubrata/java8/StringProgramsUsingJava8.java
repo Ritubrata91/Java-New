@@ -45,7 +45,7 @@ public class StringProgramsUsingJava8 {
 	}
 
 	public static void main(final String[] args) {
-		System.out.println("Occurance of Each Letter in String : " + countOccuranceofEachChar("ritubrata"));
+		System.out.println("Occurance of Each Letter in String : " + countOccuranceofEachChar("ritubrata ir"));
 		System.out.println("Number of occurances of a in ritubrata is : "+ countOccuranceOfOneChar("ritubrata",'a'));
 		System.out.println("Occurance of Each words in String : " + countOccOfEachWords("aa is a boy and bb is a girl"));
 		firstRepeatingAndNonRepeatingChar("ritubrata");

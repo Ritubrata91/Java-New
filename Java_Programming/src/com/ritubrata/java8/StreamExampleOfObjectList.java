@@ -18,13 +18,12 @@ public class StreamExampleOfObjectList {
 
 		final List<Book> bookList = Arrays.asList(book1, book2, book3);
 
-		bookList.sort((b1,b2)->b1.getPages() - b2.getPages());
+		bookList.sort(Comparator.comparingInt(Book::getPages));
 		System.out.println("use of sort. Books sorted by page number asc order : " );
 		bookList.forEach(System.out::println);
 
 		//use of summingInt
-		final int total = bookList.stream()
-				.collect(Collectors.summingInt(Book::getPages));
+		final int total = bookList.stream().mapToInt(Book::getPages).sum();
 		System.out.println("use of summingInt . Total pages : "  +total);
 
 		//use of count
