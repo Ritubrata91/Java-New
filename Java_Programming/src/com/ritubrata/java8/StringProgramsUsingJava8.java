@@ -16,16 +16,13 @@ public class StringProgramsUsingJava8 {
 				collect(Collectors.groupingBy(s -> s,
 						LinkedHashMap::new, Collectors.counting()));
 	}
-
 	private static long countOccuranceOfOneChar(final String str, final char ch) {
 		return str.chars()
 				.filter(c -> c == ch)
 				.count();
 	}
-
 	private static Map<String, Long> countOccOfEachWords(final String str) {
-		return Arrays.asList(str.split("\\W+")).
-				stream().
+		return Arrays.stream(str.split("\\W+")).
 				map(String::toLowerCase).
 				collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 	}
@@ -36,11 +33,11 @@ public class StringProgramsUsingJava8 {
 				collect(Collectors.groupingBy(
 						Function.identity(), LinkedHashMap::new, Collectors.counting()));
 
-		final Optional<Character> firstNonRepeat = collect.entrySet().stream().filter( e -> e.getValue() == 1).map(Entry::getKey).findFirst();
-		if(firstNonRepeat.isPresent()) {
-			System.out.println("First non repeating:" + firstNonRepeat.get());
-		}
-		final Optional<Character> firstRepeat = collect.entrySet().stream().filter( e -> e.getValue() > 1).map(Entry::getKey).findFirst();
+		final Optional<Character> firstNonRepeat = collect.entrySet().stream()
+				.filter( e -> e.getValue() == 1).map(Entry::getKey).findFirst();
+		firstNonRepeat.ifPresent(character -> System.out.println("First non repeating:" + character));
+		final Optional<Character> firstRepeat = collect.entrySet().stream()
+				.filter( e -> e.getValue() > 1).map(Entry::getKey).findFirst();
 		System.out.println("First repeating:" + firstRepeat.orElse(null));
 	}
 
