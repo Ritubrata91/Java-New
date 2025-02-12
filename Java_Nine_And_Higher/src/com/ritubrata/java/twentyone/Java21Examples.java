@@ -6,7 +6,8 @@ import java.util.List;
 public class Java21Examples {
 
     public static void main(String[] args) {
-        PatternMatchingForSwitch("abc");
+        String s = "abc";
+        PatternMatchingForSwitch(s);
         SequenceCollectionExample();
     }
 
