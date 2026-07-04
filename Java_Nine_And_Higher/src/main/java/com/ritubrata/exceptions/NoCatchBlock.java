@@ -1,3 +1,4 @@
+/*
 package com.ritubrata.exceptions;
 
 public class NoCatchBlock {
@@ -10,3 +11,4 @@ public class NoCatchBlock {
 		}
 	}
 }
+*/
