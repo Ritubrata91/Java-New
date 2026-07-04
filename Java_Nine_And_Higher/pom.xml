@@ -8,6 +8,11 @@
     <artifactId>Java_Nine_And_Higher</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Java_Nine_And_Higher</name>
+
+    <properties>
+        <maven.compiler.source>23</maven.compiler.source>
+        <maven.compiler.target>23</maven.compiler.target>
+    </properties>
     <!-- Source: https://mvnrepository.com/artifact/com.google.code.gson/gson -->
     <dependencies>
     <dependency>
@@ -37,8 +42,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>25</source>
-                    <target>25</target>
+                    <source>23</source>
+                    <target>23</target>
                     <compilerArgs>
                         <arg>--enable-preview</arg>
                     </compilerArgs>
