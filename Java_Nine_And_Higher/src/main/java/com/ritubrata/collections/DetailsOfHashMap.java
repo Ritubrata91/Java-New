@@ -97,7 +97,7 @@ public class DetailsOfHashMap {
 		hashmap.put("five", 5);
 		hashmap.put("seven", 7);
 		hashmap.put("three", 3);
-		hashmap.put("com/ritubrata/nine", 9);
+		hashmap.put("com/ritubrata/higher/version/java9", 9);
 		hashmap.put("zero", 0);
 		hashmap.put("eight", 8);
 
