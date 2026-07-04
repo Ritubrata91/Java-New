@@ -1,18 +1,22 @@
 package com.ritubrata.higher.version.java11;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
 public class Java11Features {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Java11Features.class);
 
     public static void main(final String[] args) {
-        System.out.println("********* Predicate Not Method ***************");
+        LOGGER.info("********* Predicate Not Method ***************");
         predicateNotMethod();
-        System.out.println("************************");
-		System.out.println("********* toArray method *****************");
+        LOGGER.info("************************");
+		LOGGER.info("********* toArray method *****************");
 		toArrayMethod();
-        System.out.println("************************");
+        LOGGER.info("************************");
 
 	}
 
@@ -25,7 +29,7 @@ public class Java11Features {
 	private static void toArrayMethod(){
 		List<String> sampleList = Arrays.asList("Java", "Kotlin");
 		String[] sampleArray = sampleList.toArray(String[]::new);
-		System.out.println(sampleArray[0] + "  "+ sampleArray[1]);
+		LOGGER.info(sampleArray[0] + "  "+ sampleArray[1]);
 	}
 
 

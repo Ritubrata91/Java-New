@@ -1,3 +1,4 @@
+/*
 package com.ritubrata.higher.version.java23;
 
 import java.util.List;
@@ -34,3 +35,4 @@ public class Java23Examples {
         System.out.println(pairedEvenSquares);
     }
 }
+*/
