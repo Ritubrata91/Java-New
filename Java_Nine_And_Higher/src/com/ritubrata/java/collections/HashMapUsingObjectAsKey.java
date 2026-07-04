@@ -1,13 +1,15 @@
 package com.ritubrata.java.collections;
 
+import lombok.Value;
+
 import java.util.HashMap;
 import java.util.Map;
 
-//import lombok.Value;
+
 
 public class HashMapUsingObjectAsKey {
 
-//	@Value
+	@Value
 	public static class KeyObject {
 		int id;
 		String name;
